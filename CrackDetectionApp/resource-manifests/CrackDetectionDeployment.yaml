@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crack-detection-pod
+spec:
+  selector:
+    matchLabels:
+      app: crack-detection-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: crack-detection-pod
+    spec:
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs
+      containers:
+        - name: crack-detection-pod
+          image: piyush9090/crack-detection-logic
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: "/app/uploads/images"
+              name: nfs
+          ports:
+          - containerPort: 5050

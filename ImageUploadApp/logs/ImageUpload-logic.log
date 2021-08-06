@@ -1,0 +1,77 @@
+Level is NOT DEBUG. There will be no wait.
+Trying to login. If you are NOT logged in, there will be a prompt
+Authenticating with existing credentials...
+Login Succeeded
+Building image-upload-logic
+Sending build context to Docker daemon  56.83kB
+Step 1/9 : FROM node:15.14.0
+ ---> d2850632b602
+Step 2/9 : WORKDIR /app
+ ---> Using cache
+ ---> 85c96a00498c
+Step 3/9 : COPY package.json /app/package.json
+ ---> Using cache
+ ---> ccd6eb575e49
+Step 4/9 : RUN npm install --silent
+ ---> Using cache
+ ---> 286e9d039810
+Step 5/9 : COPY . /app
+ ---> Using cache
+ ---> 13325162f5bc
+Step 6/9 : RUN pwd
+ ---> Using cache
+ ---> 59bc26b041a8
+Step 7/9 : RUN ls -lrt
+ ---> Using cache
+ ---> 4dd80148fc70
+Step 8/9 : EXPOSE 80
+ ---> Using cache
+ ---> 8b8757fac7d4
+Step 9/9 : CMD ["npm","start", "-g", "daemon off;"]
+ ---> Using cache
+ ---> 0e716812a89a
+Successfully built 0e716812a89a
+Successfully tagged piyush9090/image-upload-logic:latest
+Pushing image-upload-logic
+Using default tag: latest
+The push refers to repository [docker.io/piyush9090/image-upload-logic]
+5b97d33318ef: Preparing
+4d95a26f0575: Preparing
+3a28e0a6a69b: Preparing
+8d77f3f9f2e3: Preparing
+787c1f8d6fb0: Preparing
+c5691ffc2a37: Preparing
+9a90d11e5261: Preparing
+33dd93485756: Preparing
+607d71c12b77: Preparing
+052174538f53: Preparing
+8abfe7e7c816: Preparing
+c8b886062a47: Preparing
+16fc2e3ca032: Preparing
+c5691ffc2a37: Waiting
+9a90d11e5261: Waiting
+607d71c12b77: Waiting
+8abfe7e7c816: Waiting
+16fc2e3ca032: Waiting
+052174538f53: Waiting
+33dd93485756: Waiting
+c8b886062a47: Waiting
+3a28e0a6a69b: Layer already exists
+787c1f8d6fb0: Layer already exists
+8d77f3f9f2e3: Layer already exists
+5b97d33318ef: Layer already exists
+4d95a26f0575: Layer already exists
+c5691ffc2a37: Layer already exists
+33dd93485756: Layer already exists
+9a90d11e5261: Layer already exists
+607d71c12b77: Layer already exists
+052174538f53: Layer already exists
+8abfe7e7c816: Layer already exists
+c8b886062a47: Layer already exists
+16fc2e3ca032: Mounted from library/node
+latest: digest: sha256:788668ef5c37fdb204d35e98bf1b7bf7d314bd14950a5bc33cd7fc4f60f8a56c size: 3048
+Running image-upload-logic
+List of containers running now
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ The one we just started is : 
+ERROR: image-upload is NOT running. :(  . Please Check logs/ImageUpload-logic.log

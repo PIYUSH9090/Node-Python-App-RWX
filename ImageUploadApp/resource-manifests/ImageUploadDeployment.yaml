@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-upload-pv-pod
+spec:
+  selector:
+    matchLabels:
+      app: image-upload-pv-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: image-upload-pv-pod
+    spec:
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs
+      containers:
+        - name: image-upload-pv-pod
+          image: piyush9090/image-upload-logic
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: "/app/uploads/images"
+              name: nfs          
+          ports:
+          - containerPort: 3000
